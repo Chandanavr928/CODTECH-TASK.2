@@ -1,0 +1,706 @@
+[8:03 pm, 27/11/2024] Meta AI: Expense.java
+
+public class Expense {
+    private String date;
+    private String category;
+    private double amount;
+    private String description;
+
+    public Expense(String date, String category, double amount, String description) {
+        this.date = date;
+        this.category = category;
+        this.amount = amount;
+        this.description = description;
+    }
+
+    // Getters and Setters
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
+    public double getAmount() {
+        return amount;
+    }
+
+    public void setAmount(double amount) {
+        this.amount = amount;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+}
+
+
+ExpenseTracker.java
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class ExpenseTracker {
+    private List<Expense> expenses;
+
+    public ExpenseTracker() {
+        this.expenses = new ArrayList<>();
+    }
+
+    // Add expense
+    public void addExpense(Expense expense) {
+        expenses.add(expense);
+    }
+
+    // Display expenses
+    public void displayExpenses() {
+        for (Expense expense : expenses) {
+            System.out.println("Date: " + expense.getDate());
+            System.out.println("Category: " + expense.getCategory());
+            System.out.println("Amount: " + expense.getAmount());
+            System.out.println("Description: " + expense.getDescription());
+            System.out.println();
+        }
+    }
+
+    // Calculate total expenses
+    public double calculateTotalExpenses() {
+        double totalExpenses = 0;
+        for (Expense expense : expenses) {
+            totalExpenses += expense.getAmount();
+        }
+        return totalExpenses;
+    }
+}
+
+
+Main.java
+
+public class Main {
+    public static void main(String[] args) {
+        ExpenseTracker tracker = new ExpenseTracker();
+
+        // Add expenses
+        Expense expense1 = new Expense("2024-11-27", "Food", 10.99, "Lunch at restaurant");
+        Expense expense2 = new Expense("2024-11-27", "Transportation", 5.00, "Bus fare");
+
+        tracker.addExpense(expense1);
+        tracker.addExpense(expense2);
+
+        // Display expenses
+        tracker.displayExpenses();
+
+        // Calculate total expenses
+        double totalExpenses = tracker.calculateTotalExpenses();
+        System.out.println("Total Expenses: " + totalExpenses);
+    }
+}
+
+This code demonstrates a basic personal expenses tracker with the following features:
+
+- Expense class to represent individual expenses
+- ExpenseTracker class to manage a list of expenses
+- Methods to add expenses, display expenses, and calculate total expenses
+
+You can extend this code to include additional features, such as:
+
+- Data persistence using a database or file storage
+- User authentication and authorization
+- Expense categorization and filtering
+- Budgeting and expense tracking analytics
+[8:04 pm, 27/11/2024] Chandana VR: Give an CSS code for personal expenses tracker based on dotnet
+[8:04 pm, 27/11/2024] Meta AI: Here's a simplified CSS code for a personal expenses tracker:
+
+
+/* Global Styles */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+}
+
+/* Header Styles */
+
+.header {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+.header h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+/* Expense List Styles */
+
+.expense-list {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.expense-list h2 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.expense-list ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.expense-list li {
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.expense-list li:last-child {
+  border-bottom: none;
+}
+
+.expense-list .date {
+  font-size: 14px;
+  color: #666;
+}
+
+.expense-list .category {
+  font-size: 14px;
+  color: #666;
+}
+
+.expense-list .amount {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Form Styles */
+
+.form {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form label {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.form input[type="text"], .form input[type="number"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+}
+
+.form button[type="submit"] {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.form button[type="submit"]:hover {
+  background-color: #444;
+}
+
+This CSS code styles the personal expenses tracker with a clean and modern design. It includes styles for the header, expense list, form, and buttons.
+
+You can adjust the styles to fit your specific needs and preferences.
+
+Note: This CSS code is designed to work with HTML markup. You'll need to create the corresponding HTML structure for the styles to take effect.
+[8:04 pm, 27/11/2024] Chandana VR: Give an python code for personal expenses tracker based on dotnet
+[8:04 pm, 27/11/2024] Meta AI: Here's a simplified Python code for a personal expenses tracker:
+
+(link unavailable)
+
+class Expense:
+    def __init__(self, date, category, amount, description):
+        self.date = date
+        self.category = category
+        self.amount = amount
+        self.description = description
+
+    def __str__(self):
+        return f"Date: {self.date}, Category: {self.category}, Amount: {self.amount}, Description: {self.description}"
+
+
+(link unavailable)
+
+class ExpenseTracker:
+    def __init__(self):
+        self.expenses = []
+
+    def add_expense(self, expense):
+        self.expenses.append(expense)
+
+    def display_expenses(self):
+        for expense in self.expenses:
+            print(expense)
+
+    def calculate_total_expenses(self):
+        total_expenses = sum(expense.amount for expense in self.expenses)
+        return total_expenses
+
+
+(link unavailable)
+
+from expense import Expense
+from expense_tracker import ExpenseTracker
+
+def main():
+    tracker = ExpenseTracker()
+
+    # Add expenses
+    expense1 = Expense("2024-11-27", "Food", 10.99, "Lunch at restaurant")
+    expense2 = Expense("2024-11-27", "Transportation", 5.00, "Bus fare")
+
+    tracker.add_expense(expense1)
+    tracker.add_expense(expense2)
+
+    # Display expenses
+    print("Expenses:")
+    tracker.display_expenses()
+
+    # Calculate total expenses
+    total_expenses = tracker.calculate_total_expenses()
+    print(f"Total Expenses: {total_expenses}")
+
+if __name__ == "__main__":
+    main()
+
+This code demonstrates a basic personal expenses tracker with the following features:
+
+- Expense class to represent individual expenses
+- ExpenseTracker class to manage a list of expenses
+- Methods to add expenses, display expenses, and calculate total expenses
+
+You can extend this code to include additional features, such as:
+
+- Data persistence using a database or file storage
+- User authentication and authorization
+- Expense categorization and filtering
+- Budgeting and expense tracking analytics
+[8:05 pm, 27/11/2024] Chandana VR: Give an Java code for E-commerce management based on dotnet
+[8:05 pm, 27/11/2024] Meta AI: Here's a simplified Java code for an E-commerce management system:
+
+Product.java
+
+public class Product {
+    private int id;
+    private String name;
+    private double price;
+    private String description;
+
+    public Product(int id, String name, double price, String description) {
+        (link unavailable) = id;
+        this.name = name;
+        this.price = price;
+        this.description = description;
+    }
+
+    // Getters and Setters
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        (link unavailable) = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+}
+
+
+Order.java
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Order {
+    private int id;
+    private List<Product> products;
+    private double total;
+
+    public Order(int id) {
+        (link unavailable) = id;
+        this.products = new ArrayList<>();
+        this.total = 0;
+    }
+
+    // Getters and Setters
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        (link unavailable) = id;
+    }
+
+    public List<Product> getProducts() {
+        return products;
+    }
+
+    public void setProducts(List<Product> products) {
+        this.products = products;
+    }
+
+    public double getTotal() {
+        return total;
+    }
+
+    public void setTotal(double total) {
+        this.total = total;
+    }
+
+    public void addProduct(Product product) {
+        products.add(product);
+        total += product.getPrice();
+    }
+}
+
+
+EcommerceSystem.java
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class EcommerceSystem {
+    private List<Product> products;
+    private List<Order> orders;
+
+    public EcommerceSystem() {
+        this.products = new ArrayList<>();
+        this.orders = new ArrayList<>();
+    }
+
+    // Add product
+    public void addProduct(Product product) {
+        products.add(product);
+    }
+
+    // Add order
+    public void addOrder(Order order) {
+        orders.add(order);
+    }
+
+    // Display products
+    public void displayProducts() {
+        for (Product product : products) {
+            System.out.println("Product ID: " + product.getId());
+            System.out.println("Product Name: " + product.getName());
+            System.out.println("Product Price: " + product.getPrice());
+            System.out.println("Product Description: " + product.getDescription());
+            System.out.println();
+        }
+    }
+
+    // Display orders
+    public void displayOrders() {
+        for (Order order : orders) {
+            System.out.println("Order ID: " + order.getId());
+            System.out.println("Order Total: " + order.getTotal());
+            System.out.println("Order Products:");
+            for (Product product : order.getProducts()) {
+                System.out.println("Product Name: " + product.getName());
+                System.out.println("Product Price: " + product.getPrice());
+                System.out.println();
+            }
+        }
+    }
+}
+
+
+Main.java
+
+public class Main {
+    public static void main(String[] args) {
+        EcommerceSystem system = new EcommerceSystem();
+
+        // Add products
+        Product product1 = new Product(1, "Product A", 10.99, "This is product A");
+        Product product2 = new Product(2, "Product B", 5.99, "This is product B");
+
+        system.addProduct(product1);
+        system.addProduct(product2);
+
+        // Add order
+        Order order = new Order(1);
+        order.addProduct(product1);
+        order.addProduct(product2);
+
+        system.addOrder(order);
+
+        // Display products
+        system.displayProducts();
+
+        // Display orders
+        system.displayOrders();
+    }
+}
+
+This code demonstrates a basic E-commerce management system with the following features:
+
+- Product class to represent individual products
+- Order class to represent individual orders
+- EcommerceSystem class to manage products and orders
+- Methods to add products, add orders, display products, and display orders
+
+You can extend this code to include additional features, such as:
+
+- User authentication and authorization
+- Product categorization and filtering
+- Order status management (e.g., pending, shipped, delivered)
+- Payment gateway integration
+[8:05 pm, 27/11/2024] Chandana VR: Give an Java code for E-commerce system based on dotnet
+[8:05 pm, 27/11/2024] Meta AI: Here's a simplified Java code for an E-commerce system:
+
+Product.java
+
+public class Product {
+    private int id;
+    private String name;
+    private double price;
+    private String description;
+
+    public Product(int id, String name, double price, String description) {
+        (link unavailable) = id;
+        this.name = name;
+        this.price = price;
+        this.description = description;
+    }
+
+    // Getters and Setters
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        (link unavailable) = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+}
+
+
+Order.java
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Order {
+    private int id;
+    private List<Product> products;
+    private double total;
+
+    public Order(int id) {
+        (link unavailable) = id;
+        this.products = new ArrayList<>();
+        this.total = 0;
+    }
+
+    // Getters and Setters
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        (link unavailable) = id;
+    }
+
+    public List<Product> getProducts() {
+        return products;
+    }
+
+    public void setProducts(List<Product> products) {
+        this.products = products;
+    }
+
+    public double getTotal() {
+        return total;
+    }
+
+    public void setTotal(double total) {
+        this.total = total;
+    }
+
+    public void addProduct(Product product) {
+        products.add(product);
+        total += product.getPrice();
+    }
+}
+
+
+Customer.java
+
+public class Customer {
+    private int id;
+    private String name;
+    private String email;
+
+    public Customer(int id, String name, String email) {
+        (link unavailable) = id;
+        this.name = name;
+        this.email = email;
+    }
+
+    // Getters and Setters
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        (link unavailable) = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+}
+
+
+EcommerceSystem.java
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class EcommerceSystem {
+    private List<Product> products;
+    private List<Order> orders;
+    private List<Customer> customers;
+
+    public EcommerceSystem() {
+        this.products = new ArrayList<>();
+        this.orders = new ArrayList<>();
+        this.customers = new ArrayList<>();
+    }
+
+    // Add product
+    public void addProduct(Product product) {
+        products.add(product);
+    }
+
+    // Add order
+    public void addOrder(Order order) {
+        orders.add(order);
+    }
+
+    // Add customer
+    public void addCustomer(Customer customer) {
+        customers.add(customer);
+    }
+
+    // Display products
+    public void displayProducts() {
+        for (Product product : products) {
+            System.out.println("Product ID: " + product.getId());
+            System.out.println("Product Name: " + product.getName());
+            System.out.println("Product Price: " + product.getPrice());
+            System.out.println("Product Description: " + product.getDescription());
+            System.out.println();
+        }
+    }
+
+    // Display orders
+    public void displayOrders() {
+        for (Order order : orders) {
+            System.out.println("Order ID: " + order.getId());
+            System.out.println("Order Total: " + order.getTotal());
+            System.out.println("Order Products:");
+            for (Product product : order.getProducts()) {
+                System.out.println("Product Name: " + product.getName());
+                System.out.println("Product Price: " + product.getPrice());
+                System.out.println();
+            }
+        }
+    }
+
+    // Display customers
+    public void displayCustomers() {
+        for (Customer customer : customers) {
+            System.out.println("Customer ID: " +
